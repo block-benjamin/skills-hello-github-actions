@@ -17,4 +17,4 @@ jobs:
         echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
     - name: echo branch
       run: |
-        echo "{{ steps.extract_branch.outputs.branch }}"
+        echo "${{ steps.extract_branch.outputs.branch }}"
