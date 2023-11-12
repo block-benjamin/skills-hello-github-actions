@@ -2,9 +2,10 @@ name: "Databricks CICE"
 
 on:
   create:
-
 jobs:
   get-branch-name:
+    name: feature branch name
+    if: contains('${{ github.ref }}', 'feat/')
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
