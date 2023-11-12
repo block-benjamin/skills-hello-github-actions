@@ -1,4 +1,4 @@
-name: "Databricks Secrets"
+name: "Create Feature Branch"
 
 on:
   workflow_dispatch:
