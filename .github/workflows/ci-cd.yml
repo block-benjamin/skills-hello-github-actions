@@ -9,17 +9,10 @@ jobs:
     steps:
     - name: Check out repository
       uses: actions/checkout@v4
-   # - name: Identifiy branch
-   #   id: extract_branch2
-   #   run: |
-   #     echo "/Repos/Vitesse/${{ github.ref }}"
-   #     echo "/Repos/Vitesse/${{ github.ref_name }}"
-   #     echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
-    - id: foo
+    - name: identify branch
+      id: extract_branch
       uses: ./.github/actions/github-branch-name
-    - run:  echo ${{ steps.foo.outputs.branch }}
-      shell: bash
-    - run: echo random-number ${{ steps.foo.outputs.random-number }}
-      shell: bash
-    - run: echo random-number ${{ steps.foo.outputs.branch_name }}
+    - name: echo branch
+      run: |
+        echo "${{ steps.extract_branch.outputs.branch_name }}"
       shell: bash
