@@ -21,3 +21,4 @@ jobs:
     - name: echo branch
       run: |
         echo "${{ steps.extract_branch.outputs.branch }}"
+      shell: bash
