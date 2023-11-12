@@ -2,17 +2,13 @@ name: 'github-branch-name'
 description: 'Get the branch name of both the source and new branch'
 outputs:
   branch_name:
-    description: "name of the branch"
+    description: "Name of the branch"
     value: ${{ steps.branch_name.outputs.branch }}
-  random-number:
-    description: "Random number"
-    value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
   using: "composite"
   steps:
-    - id: branch_name
-      run: echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+    - name: Identifiy branch
+      id: branch_name
       shell: bash
-    - id: random-number-generator
-      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
-      shell: bash
+      run: |
+        echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
