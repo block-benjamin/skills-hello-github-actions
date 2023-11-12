@@ -6,4 +6,4 @@ runs:
     - shell: bash
       id: branch_name
       #run: echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
-      run: echo "branch=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
+      run: echo "${GITHUB_REF#*/}"
