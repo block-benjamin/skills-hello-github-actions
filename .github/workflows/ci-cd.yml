@@ -15,16 +15,10 @@ jobs:
    #     echo "/Repos/Vitesse/${{ github.ref }}"
    #     echo "/Repos/Vitesse/${{ github.ref_name }}"
    #     echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
-    - name: identify branch
-      id: extract_branch
+    - id: foo
       uses: ./.github/actions/github-branch-name
     - name: echo branch
-      run: |
-        echo "${{ steps.extract_branch.outputs.branch }}"
+      run:  echo ${{ steps.foo.outputs.branch }}
       shell: bash
-    - id: foo
-      uses: ./.github/actions/hello-world
-      with:
-        who-to-greet: 'Mona the Octocat'
     - run: echo random-number ${{ steps.foo.outputs.random-number }}
       shell: bash
