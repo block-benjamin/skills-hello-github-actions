@@ -7,4 +7,4 @@ runs:
       id: branch_name
       #run: echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
       #run: echo "${GITHUB_REF##*/}"
-      run: echo "REF=${{ github.event.pull_request && github.head_ref || github.ref_name }}" >> $GITHUB_ENV
+      run: echo "REF=${{ github.event.pull_request && github.head_ref || github.ref_name }}" >> $GITHUB_OUTPUT
