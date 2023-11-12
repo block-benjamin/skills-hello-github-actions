@@ -17,8 +17,7 @@ jobs:
    #     echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
     - id: foo
       uses: ./.github/actions/github-branch-name
-    - name: echo branch
-      run:  echo ${{ steps.foo.outputs.branch }}
+    - run:  echo ${{ steps.foo.outputs.branch }}
       shell: bash
     - run: echo random-number ${{ steps.foo.outputs.random-number }}
       shell: bash
