@@ -3,8 +3,10 @@ description: 'Get the branch name of both the source and new branch'
 runs:
   using: "composite"
   steps:
-    - shell: bash
-      id: branch_name
-      #run: echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
-      #run: echo "${GITHUB_REF##*/}"
-      run: echo "REF=${{ github.event.pull_request && github.head_ref || github.ref_name }}" >> $GITHUB_OUTPUT
+    - name: Identifiy branch
+      shell: bash
+      id: extract_branch
+      run: |
+        echo "/Repos/Vitesse/${{ github.ref }}"
+        echo "/Repos/Vitesse/${{ github.ref_name }}"
+        echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
