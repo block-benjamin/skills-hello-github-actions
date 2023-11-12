@@ -1,4 +1,4 @@
-name: "identify branch name"
+name: "test branch name"
 
 on:
   create:
