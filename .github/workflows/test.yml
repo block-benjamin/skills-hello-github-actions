@@ -3,27 +3,24 @@ name: "test branch name"
 on:
   create:
 jobs:
-  prod-check:
+  branch-name:
    # if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
       - name: Extract branch name
-        run: echo "Deploying to production server on branch $GITHUB_REF"
-
+        id: branch_name
+        #run: echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
+        run: echo "branch=$(echo ${GITHUB_REF##*/})" >> $GITHUB_OUTPUT
       - name: Extract short branch name
         run: echo "${GITHUB_REF##*/}"
+      - name: Use the value
+        id: step_two
+        run: |
+          printf '%s\n' "$branch" # This will output 'yellow'
+  #branch-report:
+  #  runs-on: unbunto-latest
+  #  steps:
+  #    - name: output name
+  #      run: echo "$GITHUB_OUTPUT.branch"
         
-      - name: Get branch names
-        id: branch-name
-        uses: tj-actions/branch-names@v7
 
-      - name: Current branch name
-        run: |
-          echo "${{ steps.branch-name.outputs.current_branch }}"
-        # Outputs: "main" the branch that triggered the push event.
-
-      - name: Running on the default branch.
-        if: steps.branch-name.outputs.is_default == 'true'
-        run: |
-          echo "Running on default: ${{ steps.branch-name.outputs.current_branch }}"
-        # Outputs: "Running on default: main".
