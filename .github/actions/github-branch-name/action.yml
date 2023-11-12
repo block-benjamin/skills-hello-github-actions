@@ -5,7 +5,6 @@ runs:
   steps:
     - name: Identifiy branch
       shell: bash
-      id: extract_branch
       run: |
         echo "/Repos/Vitesse/${{ github.ref }}"
         echo "/Repos/Vitesse/${{ github.ref_name }}"
