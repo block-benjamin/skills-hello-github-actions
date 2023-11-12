@@ -16,6 +16,7 @@ jobs:
    #     echo "/Repos/Vitesse/${{ github.ref_name }}"
    #     echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
     - name: identify branch
+      id: extract_branch
       uses: ./.github/actions/github-branch-name
     - name: echo branch
       run: |
