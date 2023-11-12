@@ -1,0 +1,20 @@
+name: "Databricks Secrets"
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch-name:
+        description: 'The name of the branch'
+        required: true
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+    - name: Create feature branch
+      uses: peterjgrainger/action-create-branch@v2.2.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        branch: ${{ github.event.inputs.branch-name }}
