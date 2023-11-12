@@ -11,4 +11,4 @@ jobs:
         run: echo "Deploying to production server on branch $GITHUB_REF"
 
       - name: Extract short branch name
-        run: echo "$GITHUB_REF##*/"
+        run: echo "${GITHUB_REF##*/}"
