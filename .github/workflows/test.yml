@@ -7,10 +7,14 @@ jobs:
    # if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Extract branch name
-        id: branch_name
+      - name: Extract branch name 1
+        id: branch_name_1
         #run: echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
-        run: echo "branch=${GITHUB_REF}" >> $GITHUB_OUTPUT
+        run: echo $GITHUB_REF | sed "s|refs/heads/||"
+      - name: Extract branch name 2
+        id: branch_name_2
+        #run: echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
+        run: echo $GITHUB_REF | awk -F '/' '{printf $3}{print "/"$4}'
       - name: Extract short branch name
         run: echo "${GITHUB_REF##*/}"
       - name: Use the value
