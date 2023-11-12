@@ -21,3 +21,5 @@ jobs:
       shell: bash
     - run: echo random-number ${{ steps.foo.outputs.random-number }}
       shell: bash
+    - run: echo random-number ${{ steps.foo.outputs.branch }}
+      shell: bash
