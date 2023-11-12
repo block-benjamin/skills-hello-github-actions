@@ -22,3 +22,9 @@ jobs:
       run: |
         echo "${{ steps.extract_branch.outputs.branch }}"
       shell: bash
+    - id: foo
+      uses: ./.github/actions/hello-world
+      with:
+        who-to-greet: 'Mona the Octocat'
+    - run: echo random-number ${{ steps.foo.outputs.random-number }}
+      shell: bash
