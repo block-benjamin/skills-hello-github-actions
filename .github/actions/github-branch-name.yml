@@ -1,0 +1,10 @@
+name: 'github-branch-name'
+description: 'Get the branch name of both the source and new branch'
+outputs:
+  branch_name: ${{ steps.branch_name.outputs.branch }}
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      id: branch_name
+      run: echo "::set-output name=branch::$(echo ${GITHUB_REF##*/})"
