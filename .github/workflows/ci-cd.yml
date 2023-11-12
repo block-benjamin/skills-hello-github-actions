@@ -10,6 +10,11 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v4
     - name: Identifiy branch
+      id: extract_branch
       run: |
         echo "/Repos/Vitesse/${{ github.ref }}"
-        echo "${{ github.ref_name }}"
+        echo "/Repos/Vitesse/${{ github.ref_name }}"
+        echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+    - name: echo branch
+      run: |
+        echo "{{ steps.extract_branch.outputs.branch }}"
