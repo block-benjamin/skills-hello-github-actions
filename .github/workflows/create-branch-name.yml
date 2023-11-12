@@ -1,0 +1,16 @@
+name: "identify branch name"
+
+on:
+  create:
+jobs:
+  prod-check:
+   # if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract branch name
+        run: echo "Deploying to production server on branch $GITHUB_REF"
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
