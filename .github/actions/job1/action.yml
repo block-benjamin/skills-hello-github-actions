@@ -3,6 +3,7 @@ description: 'testing job 1'
 runs:
   using: "composite"
   steps:
+    - shell: bash
     - id: step1
       run: echo "test=hello" >> "$GITHUB_OUTPUT"
     - id: step2
