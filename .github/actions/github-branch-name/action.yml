@@ -4,13 +4,15 @@ outputs:
   branch_name:
     description: "name of the branch"
     value: ${{ steps.branch_name.outputs.branch }}
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-number }}
 runs:
   using: "composite"
   steps:
-    - name: Identifiy branch
-      id: branch_name
+    - id: branch_name
+      run: echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
       shell: bash
-      run: |
-        echo "/Repos/Vitesse/${{ github.ref }}"
-        echo "/Repos/Vitesse/${{ github.ref_name }}"
-        echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+    - id: random-number-generator
+      run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
+      shell: bash
