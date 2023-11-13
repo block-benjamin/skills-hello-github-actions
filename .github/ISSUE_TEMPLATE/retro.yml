@@ -1,21 +1,27 @@
 name: Retro
 description: Create an retrospective
+title: "[Retro]: "
 labels: ["retro"]
 projects: ["VitessePSP/6"]
 
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
   - type: dropdown
-    id: version
+    id: facilitator
     attributes:
-      label: Version
-      description: What version of our software are you running?
+      label: Faciliator
+      description: Who is facilitating the retro?
       options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-      default: 0
+        - Ben
+        - Sam
+        - Tim
     validations:
       required: true
+- type: textarea
+    - type: textarea
+    id: prime-directive
+    attributes:
+      label: Prime Derective
+      description: Define the Prime Directive
+      value: |
+        We will abide by the retrospective prime directive: 
+        "Regardless of what we discover, we understand and truly believe tat everyone did the best job they could, given what they knew at the time, their skills and ability, the resources available, and the situation at hand"
