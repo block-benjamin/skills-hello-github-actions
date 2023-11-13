@@ -4,23 +4,18 @@ labels: ["retro"]
 projects: ["VitessePSP/6"]
 
 body:
-  - type: dropdown
-    id: facilitator
+  - type: markdown
     attributes:
-      label: Facilitator
-      description: Who is facilitating the retro?
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: dropdown
+    id: version
+    attributes:
+      label: Version
+      description: What version of our software are you running?
       options:
-        - Ben
-        - Sam
-        - Tim
+        - 1.0.2 (Default)
+        - 1.0.3 (Edge)
+      default: 0
     validations:
       required: true
-  - type: markdown
-    attributes:
-      value: |
-        We're going to use the [rose bud thorn retro](https://www.teamretro.com/retrospectives/rose-bud-thorn) format to inspect & adapt our current practicies as a data team.
-  - type: markdown
-    attributes:
-      value: |
-        We will abide by the retrospective prime directive:
-        "Regardless of what we discover, we understand and truly believe tat everyone did the best job they could, given what they knew at the time, their skills and ability, the resources available, and the situation at hand"
