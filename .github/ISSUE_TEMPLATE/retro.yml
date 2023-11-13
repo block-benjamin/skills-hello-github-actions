@@ -18,8 +18,14 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Steps To Reproduce
-      description: Steps to reproduce the behavior.
+      label: Retrospective discussions
+      value: |
+        - [ ] d
+        - [ ] b
+
+  - type: textarea
+    attributes:
+      label: Prime Directive
       value: |
         We will abide by the retrospective prime directive:
         
