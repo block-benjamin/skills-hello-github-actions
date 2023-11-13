@@ -23,14 +23,3 @@ body:
         ### Prime Directive
         We will abide by the retrospective prime directive:
         "Regardless of what we discover, we understand and truly believe tat everyone did the best job they could, given what they knew at the time, their skills and ability, the resources available, and the situation at hand"
-  - type: dropdown
-    id: facilitator
-    attributes:
-      label: Facilitator
-      description: Who is facilitating the retro?
-      options:
-        - Ben
-        - Sam
-        - Tim
-    validations:
-      required: true
