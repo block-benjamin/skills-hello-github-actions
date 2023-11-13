@@ -18,11 +18,18 @@ body:
       required: true
   - type: textarea
     attributes:
+      label: Overview
+      value: |
+        We're going to use the [rose bud thorn retro](https://www.teamretro.com/retrospectives/rose-bud-thorn) format to inspect & adapt our current practicies as a data team.
+        
+        We will add ideas to each of these discussions:
+  - type: textarea
+    attributes:
       label: Retrospective discussions
       value: |
-        - [ ] d
-        - [ ] b
-
+        - [ ]  : Our positive outcomes, successes and wins
+        - [ ]  : Areas of opportunity waiting to blossom
+        - [ ]  : Challenges and issues that are causing us pain
   - type: textarea
     attributes:
       label: Prime Directive
