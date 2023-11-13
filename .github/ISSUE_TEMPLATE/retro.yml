@@ -1,0 +1,36 @@
+name: Retro
+description: Create an retrospective
+labels: ["retro"]
+projects: ["VitessePSP/6"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We're going to use the [rose bud thorn retro](https://www.teamretro.com/retrospectives/rose-bud-thorn) format to inspect & adapt our current practicies as a data team.
+
+        We will add ideas to each of these discussions:
+
+        ### Retrospective discussions
+
+        - [ ]  : Our positive outcomes, successes and wins
+        - [ ]  : Areas of opportunity waiting to blossom
+        - [ ]  : Challenges and issues that are causing us pain
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Prime Directive
+        We will abide by the retrospective prime directive:
+        "Regardless of what we discover, we understand and truly believe tat everyone did the best job they could, given what they knew at the time, their skills and ability, the resources available, and the situation at hand"
+  - type: dropdown
+    id: facilitator
+    attributes:
+      label: Facilitator
+      description: Who is facilitating the retro?
+      options:
+        - Ben
+        - Sam
+        - Tim
+    validations:
+      required: true
