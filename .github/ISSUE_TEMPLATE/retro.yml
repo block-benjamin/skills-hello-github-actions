@@ -20,12 +20,7 @@ body:
     attributes:
       label: Steps To Reproduce
       description: Steps to reproduce the behavior.
-      placeholder: |
-        1. In this environment...
-        1. With this config...
-        1. Run '...'
-        1. See error...
       value: |
-        "1"
-        "2"
+        "We will abide by the retrospective prime directive:"
+        "Regardless of what we discover, we understand and truly believe tat everyone did the best job they could, given what they knew at the time, their skills and ability, the resources available, and the situation at hand"
       
