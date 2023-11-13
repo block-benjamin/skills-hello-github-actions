@@ -25,5 +25,7 @@ body:
         1. With this config...
         1. Run '...'
         1. See error...
-      value: "1"
+      value: |
+        "1"
+        "2"
       
