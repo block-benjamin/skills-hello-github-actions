@@ -4,6 +4,17 @@ labels: ["retro"]
 projects: ["VitessePSP/6"]
 
 body:
+  - type: dropdown
+    id: facilitator
+    attributes:
+      label: Facilitator
+      description: Who is facilitating the retro?
+      options:
+        - Ben
+        - Sam
+        - Tim
+    validations:
+      required: true
   - type: markdown
     attributes:
       value: |
